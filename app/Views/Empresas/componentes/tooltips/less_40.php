@@ -1,0 +1,2 @@
+<p><strong>Porcentaje de manejo urbano (menos de 40 km/h)</strong></p>
+<p>Ingrese el porcentaje de kilómetros recorridos en calles (es decir, vialidades que no son de acceso restringido) de zonas urbanas.</p>

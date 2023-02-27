@@ -1,0 +1,1 @@
+<?= view('Empresas/inquiries/index') ?>

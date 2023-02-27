@@ -1,0 +1,134 @@
+
+<script>
+    $(document).ready(function() {
+
+        setInterval(() => {
+            $('#mensaje-errores').empty();
+            $('#mensaje-success').empty();
+        }, 3000);
+
+        //Ejecutando evento change en vEstao
+        
+        // $('#vEstado').trigger('change');
+
+        //Cargar municipios dependiendo el estado seleccionado
+        $('#vEstado').on('change', function() {
+            var estados_id = $(this).val();
+            rj = jsonFG('/general/general/getMunicipios/' + estados_id);
+            var r = $.parseJSON(rj);
+            optsSel(r, $('#vMunicipio'), false, '- - - Selecciona un municipio - - -', false)
+        });
+        $('#vEstado').trigger('change');
+        
+        <?php if(isset($company['municipio']) ){  ?>
+            $('#vMunicipio').val(<?= $company['municipio']; ?>);
+        <?php } ?>
+
+        //Guardar 
+        $('.button-submit').click(function(e){
+            
+            e.preventDefault();
+
+            var data = $('#form-companies').serializeObject();
+            
+            var rj = jsonF('<?= base_url(); ?>/Empresas/empresa/guardarInformacionDeSocios',data);
+
+            rj = JSON.parse(rj);
+
+            if (rj.ok == 1){
+                window.location.reload();
+            }else{
+                mostrarMensaje(rj.errores,'error')
+            }
+
+        });
+
+    });    
+</script>
+
+<form id="form-companies">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" value="<?= isset($company['name']) ? esc($company['name']) : '' ?>" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label>RFC</label>
+        <input type="text" value="<?= isset($company['rfc']) ? esc($company['rfc']) : '' ?>" class="form-control" disabled>
+    </div>
+    <div class="form-group">
+        <label for="vDireccion1">Dirección<sup>*</sup></label>
+        <input type="text" value="<?= isset($company['direccion']) ? esc($company['direccion']) : '' ?>" class="form-control" id="vDireccion1" name="direccion">
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label for="vEstado">Estado<sup>*</sup></label>
+            <select class="form-control" id="vEstado" name="estado">
+                <?php
+                foreach ($estados as $key => $value) {
+                ?>
+                    <option  <?= isset($company['estado']) && $company['estado'] ==  $value['id'] ? 'selected' : '' ?> value="<?= $value['id'] ?>"><?= $value['nombre'] ?></option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="vMunicipio">Municipio<sup>*</sup></label>
+            <select class="form-control" id="vMunicipio" name="municipio">
+                <?php
+                foreach ($municipios as $key => $value) {
+                ?>
+                    <option <?= isset($company['municipio']) && $company['municipio'] ==  $value['id'] ? 'selected' : '' ?> value="<?= $value['id'] ?>"><?= $value['nombre'] ?></option>
+                <?php
+                }
+                ?>                
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="vCodigoPostal">Código postal<sup>*</sup></label>
+            <input type="text" value="<?= isset($company['cp']) ? esc($company['cp']) : '' ?>" class="form-control" id="vCodigoPostal" name="cp" placeholder="Código postal">
+        </div>
+        <div class="form-group col-md-3">
+            <label for="iTelefono">Teléfono principal<sup>*</sup></label>
+            <input type="text" value="<?= isset($company['telefono']) ? esc($company['telefono']) : '' ?>" class="form-control" id="iTelefono" name="telefono" placeholder="Teléfono principal">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <label for="vWeb">Sitio WEB</label>
+            <input type="text" value="<?= isset($company['website']) ? esc($company['website']) : '' ?>" class="form-control" id="vWeb" name="website" placeholder="Sitio WEB">
+        </div>
+    </div>
+    <div class="row">
+<<<<<<< HEAD
+        <div class="col-md-6">
+            <span style="">* Campos obligatorios</span>
+            <div class="form-group">
+                <a href="/Empresas/Empresa/Inicio" class="btn btn-danger">Cancelar</a>
+                <button class="btn btn-primary button-submit" type="submit">Guardar</button>
+=======
+        <div class="col-md-6">            
+        </div>
+        <div class="col-md-6">
+            <center>
+            <div class="">
+                <p>Favor de revisar los datos de contactos de su empresa.</p>
+                <a href="/Empresas/empresa/contactos" class="btn btn-primary preventLink">Ir a contactos</a>
+            </div>
+            <br>
+            <div class="">
+                <span style="">* Campos obligatorios</span>
+                <div class="form-group">
+                    <a href="/Empresas/Empresa/Inicio" class="btn btn-danger">Cancelar</a>
+                    <button class="btn btn-primary button-submit" type="submit">Guardar</button>
+                </div>
+>>>>>>> luis
+            </div>
+            </center>
+        </div>
+        <div class="col-md-6">
+            <p>Favor de revisar los datos de contacto de su empresa.</p>
+            <a href="/Empresas/empresa/contactos" class="btn btn-primary preventLink">Ir a contactos</a>
+        </div>
+    </div>    
+</form>

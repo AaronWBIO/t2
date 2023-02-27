@@ -1,0 +1,2 @@
+<p><strong>Intermediario para carga</strong></p>
+<p>Por favor indiquese si contrat&oacute; a un tercero para transportar una parte del volumen que registr&oacute; su flota el a&ntilde;o pasado, de ser as&iacute;, cu&aacute;l es el porcentaje aproximado del volumen total, esta informaci&oacute;n ayudar&aacute; a Transporte Limpio a indentificar a empresas que est&aacute;n contratando con socios del programa pero a&uacute;n no est&aacute;n participando en el mismo.</p>

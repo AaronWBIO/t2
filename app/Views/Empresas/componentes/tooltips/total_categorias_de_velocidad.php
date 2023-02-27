@@ -1,0 +1,1 @@
+<p>Es la suma de los porcentajes antes solicitados: Autopista o carretera, Menos de 40 km/h, 40 a 80 km/h y M&aacute;s de 80 km/h y debe ser igual a 100%.</p>

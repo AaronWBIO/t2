@@ -1,0 +1,8 @@
+<p data-sourcepos="1:1-2:164" dir="auto">En esta pantalla crear&aacute; un Nombre de Flota para cada una de sus flotas el cual aparecer&aacute; EXACTAMENTE en la lista de transportistas del Programa Transporte Limpio.</p>
+<p data-sourcepos="4:1-4:284" dir="auto">&bull; Incluya &uacute;nicamente las flotas en las que tenga m&aacute;s del 95% del control de operaci&oacute;n. "Control" significa que usted opere/gestione la ruta de los veh&iacute;culos, independientemente del estado de la propiedad. Control Incluye las flotas especializadas qu&eacute; usted opera para terceros.</p>
+<p data-sourcepos="6:1-6:95" dir="auto">&bull; Nombre de la empresa: Este es el nombre de la empresa que ingres&oacute; en la p&aacute;gina de Inicio.</p>
+<p data-sourcepos="8:1-8:115" dir="auto">&bull; Identificador de la Flota: Nombre cada una de sus flotas de acuerdo a la forma en que su clientes lo contratan.</p>
+<p data-sourcepos="10:1-10:262" dir="auto">&bull; Nombre de la Flota: Esta ventana muestra cada Nombre de la Flota como se mostrar&aacute; en la Plataforma Transporte Limpio y en el archivo de datos del transportista, utilizando el Nombre de la Empresa y el Nombre de la Flota que ingres&oacute; en las ventanas previas.</p>
+<p data-sourcepos="12:1-12:34" dir="auto">Adici&oacute;n y Eliminaci&oacute;n de Flotas:</p>
+<p data-sourcepos="14:1-14:107" dir="auto">&bull; Para a&ntilde;adir una flota, seleccione el bot&oacute;n "Agregar nueva Flota" en la parte inferior de la pantalla.</p>
+<p data-sourcepos="16:1-16:103" dir="auto">&bull; Para borrar, de clic en la casilla de verificaci&oacute;n situada a la izquierda del Nombre de la Flota.</p>
